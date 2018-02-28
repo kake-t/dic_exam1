@@ -1,3 +1,4 @@
 class Blog < ApplicationRecord
-    validates :title,:content, {presence: true, length: {maximum: 140}}
+    validates :title, presence: true
+    validates :content, {presence: true, length: {maximum: 140}}
 end
