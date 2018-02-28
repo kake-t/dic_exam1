@@ -1,0 +1,22 @@
+<h1>ブログ詳細</h1>
+<div>
+    ------------タイトル------------
+</div>
+<div>
+    <%= @blog.title %>
+</div>
+<div>
+    ------------内容------------
+</div>
+<div>
+    <%= @blog.content %>
+</div>
+<div>
+    <%= link_to '編集' , edit_blog_path(@blog.id) %>
+</div>
+<div>
+    <%= link_to '削除' , blog_path(@blog.id), method: :delete , data: {confirm: '削除していいですか？'} %>
+</div>
+<div>
+    <%= link_to '一覧に戻る', blogs_path %>
+</div>

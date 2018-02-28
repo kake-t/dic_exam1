@@ -1,0 +1,21 @@
+<% if @blog.errors.any? %>
+    <% @blog.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
+<% end %>
+
+<%= form_with(model: @blog, local: true, url: choose_new_or_edit) do |form| %>
+<div>
+<%= form.label :タイトル %>
+</div>
+<div>
+<%= form.text_field :title %>
+</div>
+<div>
+<%= form.label :内容 %>
+</div>
+<div>
+<%= form.text_field :content %>
+</div>
+<%= form.submit %>
+<% end %>
