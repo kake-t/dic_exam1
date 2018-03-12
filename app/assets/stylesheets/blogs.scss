@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html{
+  font-size: 62.5%;
+  position: relative;
+  min-height: 100%;
+  background-color: yellow;
+}
+
+footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+/* @madia (min-width: 768px)
+ article {
+  height: 100%;
+} */
+
 blogs_body{
   text-align: center;
 }
