@@ -1,8 +1,13 @@
-<h1>新規投稿</h1>
+<div class="blogs_body container">
+<div class="row">
 
-<%= render 'form' %>
-
-<div>
-<%= link_to 'ブログ一覧画面に戻る', blogs_path %>
+  <h1 class="blogs_h1">新規投稿</h1>
+<div class="col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1">
+  <%= render 'form' %>
 </div>
+  <div class="col-md-2 col-md-offset-5 col-xs-8 col-xs-offset-2 btn btn-default">
+    <%= link_to 'ブログ一覧画面に戻る', blogs_path %>
+  </div>
 
+</div>
+</div>

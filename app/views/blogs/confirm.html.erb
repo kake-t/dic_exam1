@@ -1,18 +1,22 @@
+<div class="blogs_body container">
+  <div class="row">
 <h1>この内容で作成しますか？</h1>
 
-<div>
+<div class="col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1">
     <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
     <p><%= @blog.title %></p>
     <p><%= @blog.content %></p>
-    <%= form.submit "はい" %>
+    <%= form.submit "はい", class:"btn btn-default" %>
     <% end %>
 </div>
-<div>
+<div class="col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1">
     <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
-    <%= form.submit "いいえ", name: 'back' %>
+    <%= form.submit "いいえ", name: 'back', class:"btn btn-default" %>
     <% end %>
+</div>
+</div>
 </div>

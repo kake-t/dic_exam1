@@ -1,11 +1,19 @@
-<h1>編集画面</h1>
-
-<%= render 'form' %>
-
-<div>
-<%= link_to '詳細画面', blog_path(@blog.id) %>
+<div class="blogs_body container">
+  <div class="row">
+    <h1>編集画面</h1>
+    <div class="col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-3">
+      <%= render 'form' %>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-3">
+      <%= link_to '詳細画面', blog_path(@blog.id), class:"btn btn-info" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-3">
+      <%= link_to 'ブログ一覧画面に戻る', blogs_path, class:"btn btn-default" %>
+    </div>
+  </div>
+  </div>
 </div>
-<div>
-<%= link_to 'ブログ一覧画面に戻る', blogs_path %>
-</div>
-

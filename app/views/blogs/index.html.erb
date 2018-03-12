@@ -1,18 +1,25 @@
-<h1>ブログ一覧</h1>
-<%= notice %>
-<h3><%= link_to '新規投稿' , new_blog_path %></h3>
-<table>
-<tr>
-    <th>タイトル</th>
-    <th>内容</th>
-</tr>
- <% @blogs.each do |blog| %>
-<tr>
-<td><%= blog.title %></td>
-<td><%= blog.content %></td>
-<td><%= link_to '詳細' , blog_path(blog.id) %></td>
-<td><%= link_to '編集' , edit_blog_path(blog.id) %></td>
-<td><%= link_to '削除' , blog_path(blog.id), method: :delete , data: {confirm: '削除していいですか？'} %></td>
-</tr>
- <% end %>
-</table>
+<div class="blogs_body container">
+
+<h1 class="blogs_h1">ブログ一覧</h1>
+<div class="blogs_notice"><%= notice %></div>
+<h3 id="blogs_new_button"><%= link_to '新規投稿' , new_blog_path, class:"btn btn-default" %></h3>
+</div>
+<div class="container">
+    <table>
+      <tr class="row">
+        <th class="col-xs-6">タイトル</th>
+        <th class="col-xs-6">内容</th>
+      </tr>
+      <% @blogs.each do |blog| %>
+        <tr class="row">
+          <td class="col-xs-6"><%= blog.title %></td>
+          <td class="col-xs-6"><%= blog.content %></td>
+          <div class="row">
+          <td class="col-xs-4"><%= link_to '詳細' , blog_path(blog.id), class:"btn btn-info" %></td>
+          <td class="col-xs-4"><%= link_to '編集' , edit_blog_path(blog.id), class:"btn btn-primary" %></td>
+          <td class="col-xs-4"><%= link_to '削除' , blog_path(blog.id), method: :delete , data: {confirm: '削除していいですか？'}, class:"btn btn-danger" %></td>
+              </div>
+        </tr>
+      <% end %>
+    </table>
+</div>
