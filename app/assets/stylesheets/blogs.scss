@@ -18,12 +18,7 @@ footer{
   color: white;
 }
 
-/* @madia (min-width: 768px)
- article {
-  height: 100%;
-} */
-
-blogs_body{
+.blogs_body{
   text-align: center;
 }
 
@@ -39,6 +34,7 @@ h1 {
   text-align: center;
 }
 
-.navbar-header.navbar-collapse.collapse.navlogo {
-  height: 30px;
-}
+// navbar-brand collapse navbar-collapse navlogo
+// .navbar-brand,.collapse,.navbar-collapse {
+//   height: 30px;
+// }
