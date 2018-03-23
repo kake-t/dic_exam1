@@ -6,8 +6,9 @@
   <div class="row">
     <% @favorite_blogs.each do |favorite_blog| %>
       <div class="col-xs-4">
-        <p><%= favorite_blog.title %></p>
-        <p><%= favorite_blog.content %></p>
+        <p>タイトル：<%= favorite_blog.title %></p>
+        <p>内容：<%= favorite_blog.content %></p>
+        <p>投稿者：<%= favorite_blog.name %></p>
         <p><%= link_to '詳細' , blog_path(favorite_blog.id), class:"btn btn-info" %></p>
       </div>
     <% end %>
