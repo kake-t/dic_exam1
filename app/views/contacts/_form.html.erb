@@ -4,16 +4,16 @@
       <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
       <ul>
-        <% contact.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_fild :name, id: :contact_name %>
+    <%= form.text_field :name, id: :contact_name %>
   </div>
 
   <div class="field">
