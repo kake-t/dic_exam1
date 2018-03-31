@@ -6,8 +6,12 @@
     <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
+    <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
     <p><%= @blog.title %></p>
     <p><%= @blog.content %></p>
+    <% if @blog.image? %>
+      <%= image_tag(@blog.image.url) %>
+    <% end %>
     <%= form.submit "はい", class:"btn btn-default" %>
     <% end %>
 </div>
@@ -15,6 +19,7 @@
     <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
+    <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
     <%= form.submit "いいえ", name: 'back', class:"btn btn-default" %>
     <% end %>
 </div>

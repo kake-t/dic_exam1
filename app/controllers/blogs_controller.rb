@@ -19,6 +19,8 @@ class BlogsController < ApplicationController
     @blog = current_user.blogs.new(strong_params)
     @blog.user_id = current_user.id
     @blog.name = current_user.name
+    @blog.image.retrieve_from_cache! params[:cache][:image]
+    @blog.save!
     if @blog.save
       #ブログに紐付いているユーザーのにメールを送る
       BlogMailer.blog_mail(@blog).deliver
@@ -55,7 +57,7 @@ class BlogsController < ApplicationController
   private
 
   def strong_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :image, :image_cache)
   end
 
   def blog_find_params

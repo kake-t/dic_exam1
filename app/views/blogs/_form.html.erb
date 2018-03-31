@@ -1,21 +1,28 @@
 <% if @blog.errors.any? %>
-    <% @blog.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-    <% end %>
+  <% @blog.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
 <% end %>
 
 <%= form_with(model: @blog, local: true, url: choose_new_or_edit) do |form| %>
 <div>
-<%= form.label :タイトル %>
+  <%= form.label :title %>
 </div>
 <div>
-<%= form.text_field :title %>
+  <%= form.text_field :title %>
 </div>
 <div>
-<%= form.label :内容 %>
+  <%= form.label :content %>
 </div>
 <div>
-<%= form.text_field :content %>
+  <%= form.text_field :content %>
+</div>
+<div>
+  <% form.label :image %>
+</div>
+<div>
+  <%= form.file_field :image %>
+  <%= form.hidden_field :image_cache %>
 </div>
 <%= form.submit %>
 <% end %>
