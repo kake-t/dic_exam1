@@ -12,6 +12,11 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>
+  <div>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
 

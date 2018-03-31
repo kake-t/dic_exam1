@@ -9,9 +9,11 @@
     <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
     <p><%= @blog.title %></p>
     <p><%= @blog.content %></p>
-    <% if @blog.image? %>
-      <%= image_tag(@blog.image.url) %>
-    <% end %>
+
+      <% if @blog.image? %>
+        <%= image_tag(@blog.image.url) %>
+      <% end %>
+      
     <%= form.submit "はい", class:"btn btn-default" %>
     <% end %>
 </div>

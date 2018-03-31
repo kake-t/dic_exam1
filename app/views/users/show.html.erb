@@ -1,7 +1,13 @@
 <h1><%= @user.name %>のページ</h1>
 <!-- 画像投稿、表示 -->
-
-
+<%= image_tag @user.image, class: "center-block" %>
+<!-- <%= form_with(model: @user, local: true) do |f| %>
+  <div>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <%= f.submit "画像変更" %> -->
+<% end %>
 
 <h3 id="blogs_new_button"><%= link_to '新規投稿' , new_blog_path, class:"btn btn-default" %></h3>
 <div class="container">
