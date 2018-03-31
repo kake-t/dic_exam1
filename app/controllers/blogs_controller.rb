@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all.order('created_at desc')
+    @user = User.find_by(id: session[:user_id])
   end
 
   def new
@@ -19,8 +20,10 @@ class BlogsController < ApplicationController
     @blog = current_user.blogs.new(strong_params)
     @blog.user_id = current_user.id
     @blog.name = current_user.name
-    @blog.image.retrieve_from_cache! params[:cache][:image]
-    @blog.save!
+    if @blog.image?
+      @blog.image.retrieve_from_cache! params[:cache][:image]
+      @blog.save
+    end
     if @blog.save
       #ブログに紐付いているユーザーのにメールを送る
       BlogMailer.blog_mail(@blog).deliver
