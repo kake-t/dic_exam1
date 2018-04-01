@@ -5,7 +5,6 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all.order('created_at desc')
-    @user = User.find_by(id: session[:user_id])
   end
 
   def new

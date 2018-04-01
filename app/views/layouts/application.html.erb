@@ -28,6 +28,7 @@
               <div class="navbar-text navbar-right">
               <!-- ログイン中か否かで表示するリンクを変える -->
               <% if logged_in? %>
+                <%= image_tag current_user.image.url(:thumb) %>
                 <%= link_to "マイページ", user_path(current_user.id), class:"navbar-link" %>
                 <%= link_to "ログアウト", session_path(current_user.id), method: :delete, class:"navbar-link"  %>
               <% else %>
