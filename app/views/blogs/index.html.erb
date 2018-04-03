@@ -14,7 +14,7 @@
         <tr class="row">
           <td class="col-xs-4"><%= blog.title %></td>
           <td class="col-xs-4"><%= blog.content %></td>
-          <td class="col-xs-4"><%= image_tag (blog.image) if @blog.image.present? %></td>
+          <td class="col-xs-4"><%= image_tag (blog.image) %></td>
           <div class="row">
           <td class="col-xs-4"><%= link_to '詳細' , blog_path(blog.id), class:"btn btn-info" %></td>
           <td class="col-xs-4">
