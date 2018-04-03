@@ -6,14 +6,14 @@
     <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
-    <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
     <p><%= @blog.title %></p>
     <p><%= @blog.content %></p>
 
       <% if @blog.image? %>
         <%= image_tag(@blog.image.url) %>
+        <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
       <% end %>
-      
+
     <%= form.submit "はい", class:"btn btn-default" %>
     <% end %>
 </div>
