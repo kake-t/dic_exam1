@@ -28,7 +28,7 @@
       <%= image_tag (@blog.image) if @blog.image? %>
     </div>
 
-    <p>投稿者：<%= image_tag @blog.user.image.url(:thumb) %><%= @blog.name %></p>
+    <p>投稿者：<%= image_tag @blog.user.image.url(:thumb) if @blog.user.image? %><%= @blog.name %></p>
 
     <div class="col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1">
       <%= link_to '編集' , edit_blog_path(@blog.id), class:"btn btn-primary"%>
